@@ -9,36 +9,19 @@ from datetime import datetime
 import pyautogui  # <--- NEW: For the pop-up box
 import os # to save modified data files
 
-   
-# --- CONFIGURATION ---
-#VONAGE_KEY = "89368dee"
-#VONAGE_SECRET = "PzVyi0ywfz7xzyza" 
-#TARGET_PHONE = ""   --- Avik.
-
-#VONAGE_KEY = "b870c2db"
-#VONAGE_SECRET = "PQVVfMpcqDC3a8dw" 
-#TARGET_PHONE = "" --- Taimur (sms limit reached).
-
-#VONAGE_KEY = "507ff9c3"
-#VONAGE_SECRET = "NrypXf*Bjd$uDtL*amH7uT4" 
-#TARGET_PHONE = "" --- Kuntal (sms limit reached).
-  
-#VONAGE_KEY = "e2bd36f3"
-#VONAGE_SECRET = "xKfTn@A4BCo" 
-#TARGET_PHONE = "phn no." #--- Kuntal 
-
-"""VONAGE_KEY = "b89a7f91"
-VONAGE_SECRET = "9GSKsQdpyQQ6igR4" 
-TARGET_PHONE = "916296437848" #--- Ankan """
+# --- VONAGE CONFIGURATION ---
+VONAGE_KEY = os.getenv("VONAGE_KEY")
+VONAGE_SECRET = os.getenv("VONAGE_SECRET")
+TARGET_PHONE = os.getenv("TARGET_PHONE") 
 
 from twilio.rest import Client
   
 # --- TWILIO CONFIGURATION ---
 # Get these from your Twilio Console (twilio.com/console)
-TWILIO_ACCOUNT_SID = "AC92bc3ae7afed595bd0af63738dddd033" 
-TWILIO_AUTH_TOKEN = "0b7158cc552543f7ab31549590306e42"
-TWILIO_PHONE = "+13527667221" # Format: +1XXXXXXXXXX
-TARGET_PHONE = "+917477542838" # Must be verified in Twilio Console first
+TWILIO_ACCOUNT_SID = os.getenv("TWILIO_ACCOUNT_SID")
+TWILIO_AUTH_TOKEN = os.getenv("TWILIO_AUTH_TOKEN")
+TWILIO_PHONE = os.getenv("TWILIO_PHONE")
+TARGET_PHONE = os.getenv("TARGET_PHONE")
    
 ACCEL_THRESHOLD = 20.0   
       
